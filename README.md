@@ -147,7 +147,7 @@ class TodoItem extends Component{
 }
 export default TodoItem
 ```
-在父组件给子组件传参数的时候，例：liItem={item}，子组件要接受的参数名 = 传入的变量；
-子组件接受参数：this.props.liItem
-在父组件给子组件传方法的时候，例：handleLiDel={this.handleLiDel.bind(this)}，子组件要接受的参数名 = 传入的方法   <span style="color:#ea6f5a">bind(this)是为了子组件调用时方法的this指向父组件</span>
-子组件使用方法：this.props.handleLiDel
+<p>在父组件给子组件传参数的时候，例：liItem={item}，子组件要接受的参数名 = 传入的变量；</p>
+<p>子组件接受参数：this.props.liItem</p>
+<p>在父组件给子组件传方法的时候，例：handleLiDel={this.handleLiDel.bind(this)}，子组件要接受的参数名 = 传入的方法   <span style="color:#ea6f5a">bind(this)是为了子组件调用时方法的this指向父组件</span></p>
+<p>子组件使用方法：this.props.handleLiDel</p>
