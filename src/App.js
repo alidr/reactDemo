@@ -8,7 +8,8 @@ import React, { Component,Fragment } from 'react';
 // 使用的是es6的解构赋值
 //class 类 =》使组件app继承了react的compont的方法，这样就构建了一个组件
 
-import './style.css'
+import './style.css';
+import TodoItem from './TodoItem';
 //return加上括号可以多行写html标签
 class App extends Component {
   constructor(props){
@@ -34,9 +35,11 @@ class App extends Component {
           {
             this.state.list.map((item,index)=>{
               return (
-                <li key={index}
-                onClick={this.handleLiDel.bind(this,index)}
-                >{item}</li>
+                <TodoItem 
+                liItem={item}
+                liIndex={index}
+                handleLiDel={this.handleLiDel.bind(this)}
+                /> 
               )
             })
           }
