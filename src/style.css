@@ -1,0 +1,9 @@
+input,button{
+  outline: none;
+}
+button{
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #fff;
+}
