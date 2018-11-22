@@ -113,3 +113,41 @@ React中使用自己封装的组件时，标签的首字母要大写，使用自
 * 因为es6中=新增的类class,所以在react中将标签上的类名为className;
 
 * 因为js中for循环，所以在label标签中的for要用htmlFor
+
+### 组件之间传值
+```
+父组件中
+	<div>
+          {
+            this.state.list.map((item,index)=>{
+              return (
+                <TodoItem 
+                liItem={item}
+                liIndex={index}
+                handleLiDel={this.handleLiDel.bind(this)}
+                /> 
+              )
+            })
+          }
+	</div>
+子组件
+import React,{ Component } from "react";
+
+class TodoItem extends Component{
+  constructor(props){
+    super(props);
+    this.handleLiDel = this.handleLiDel.bind(this)
+  }
+  render(){
+    return <div onClick={this.handleLiDel}>{this.props.liItem}</div>
+  }
+  handleLiDel(){
+    this.props.handleLiDel(this.props.liIndex)
+  }
+}
+export default TodoItem
+```
+在父组件给子组件传参数的时候，例：liItem={item}，子组件要接受的参数名 = 传入的变量；
+子组件接受参数：this.props.liItem
+在父组件给子组件传方法的时候，例：handleLiDel={this.handleLiDel.bind(this)}，子组件要接受的参数名 = 传入的方法   <span style="color:#ea6f5a">bind(this)是为了子组件调用时方法的this指向父组件</span>
+子组件使用方法：this.props.handleLiDel

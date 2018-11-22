@@ -31,7 +31,7 @@ class App extends Component {
           onChange={this.handleInput.bind(this)}/>
           <button onClick={this.handleLi.bind(this)}>添加</button>
         </div>
-        <ul>
+        <div>
           {
             this.state.list.map((item,index)=>{
               return (
@@ -43,7 +43,7 @@ class App extends Component {
               )
             })
           }
-        </ul>
+        </div>
       </Fragment>
     );
   }
