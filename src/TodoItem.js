@@ -1,15 +1,17 @@
-import React,{ Component } from "react";
+import React, { Component } from "react";
 
-class TodoItem extends Component{
-  constructor(props){
+class TodoItem extends Component {
+  constructor(props) {
     super(props);
     this.handleLiDel = this.handleLiDel.bind(this)
   }
-  render(){
-    return <div onClick={this.handleLiDel}>{this.props.liItem}</div>
+  render() {
+    const { liItem } = this.props
+    return <div onClick={this.handleLiDel}>{liItem}</div>
   }
-  handleLiDel(){
-    this.props.handleLiDel(this.props.liIndex)
+  handleLiDel() {
+    const { liIndex } = this.props
+    this.props.handleLiDel(liIndex)
   }
 }
 export default TodoItem
