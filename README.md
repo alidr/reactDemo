@@ -150,4 +150,12 @@ export default TodoItem
 <p>在父组件给子组件传参数的时候，例：liItem={item}，子组件要接受的参数名 = 传入的变量；</p>
 <p>子组件接受参数：this.props.liItem</p>
 <p>在父组件给子组件传方法的时候，例：handleLiDel={this.handleLiDel.bind(this)}，子组件要接受的参数名 = 传入的方法   <span style="color:#ea6f5a">bind(this)是为了子组件调用时方法的this指向父组件</span></p>
-<p>子组件使用方法：this.props.handleLiDel</p>
+<p>子组件使用方法：this.props.handleLiDel(子组件改变父组件的值)</p>
+单向数据流的概念=>父组件可以向子组件传值，但是子组件不能修改父组件传过来的值，如果需要传值，则可以由父组件向子组件传递方法来修改,这样真正修改的其实是父组件在修改
+### react的特点
+* 声明式开发
+* 可以与其他框架并存
+* 组件化
+* 单项数据流
+* 视图层框架
+* 函数式编程
